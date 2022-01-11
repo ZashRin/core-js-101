@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 /* *********************************************************************************************
  *                                                                                             *
  * Please read the following tutorial before implementing tasks:                                *
@@ -222,8 +221,11 @@ function partialUsingArguments(fn, ...args1) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-  // eslint-disable-next-line no-plusplus
-  return () => startFrom++;
+  let count = startFrom;
+  return () => {
+    count += 1;
+    return count - 1;
+  };
 }
 
 
